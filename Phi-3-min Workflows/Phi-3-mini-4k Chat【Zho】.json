@@ -1,0 +1,161 @@
+{
+  "last_node_id": 4,
+  "last_link_id": 4,
+  "nodes": [
+    {
+      "id": 2,
+      "type": "Phi3mini_4k_ModelLoader_Zho",
+      "pos": [
+        200,
+        430
+      ],
+      "size": [
+        230,
+        60
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "Phi3mini_4k",
+          "type": "PHI3",
+          "links": [
+            1
+          ],
+          "shape": 3
+        },
+        {
+          "name": "tokenizer",
+          "type": "TK",
+          "links": [
+            2
+          ],
+          "shape": 3,
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Phi3mini_4k_ModelLoader_Zho"
+      }
+    },
+    {
+      "id": 4,
+      "type": "DisplayText_Zho",
+      "pos": [
+        450,
+        430
+      ],
+      "size": [
+        590,
+        770
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 4,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "title": "🏖️Phi3mini 4k Chat",
+      "properties": {
+        "Node name for S&R": "DisplayText_Zho"
+      },
+      "widgets_values": [
+        "",
+        "user: What is the meaning of life?\n----------------------------------------\nsystem: The meaning of life is a profound and complex question that has been explored by philosophers, theologians, scientists, and thinkers throughout history. There is no single, universally accepted answer, as perspectives on this question can vary greatly depending on cultural, religious, and personal beliefs.\n\nSome people find meaning in life through their relationships with others, their pursuit of knowledge, or their contribution to society. Others may find meaning in spirituality, religion, or a connection to something greater than themselves.\n\nFrom a scientific perspective, life can be seen as a product of evolution, with the primary goal of survival and reproduction. However, this does not necessarily provide a deeper meaning or purpose.\n\nUltimately, the meaning of life is a personal journey, and each individual must find their own purpose and meaning through introspection, experiences, and the pursuit of their passions and values.\n----------------------------------------\nuser: 你是谁？\n----------------------------------------\nsystem: 我是一个人工智能助手，专门设计来帮助用户解答问题、提供信息和执行任务。如果你有任何问题或需要帮助，请随时告诉我。\n\n----------------------------------------\nuser: 鸡兔同笼问题：鸡和兔一共10只，脚一共28只，求问鸡几只兔几只？\n用中文回答\n----------------------------------------\nsystem: 这是一个经典的数学问题，叫做鸡兔同笼问题。根据题目，有10只动物，其中一部分是鸡，另一部分是兔子。鸡和兔的脚总数为28只。\n\n设鸡的数量为x，兔的数量为y。\n\n根据题目信息，我们可以得出以下两个方程：\n\n1) x + y = 10 (鸡和兔的总数)\n2) 2x + 4y = 28 (鸡和兔的脚总数，因为鸡有2只脚，兔有4只脚)\n\n我们可以通过方程2替换方程1中的x或y来解这个方程组。\n\n首先，我们将方程1中的x表示为10 - y，然后将其代入方程2中：\n\n2(10 - y) + 4y = 28\n20 - 2y + 4y = 28\n2y = 8\ny = 4\n\n现在我们知道兔子的数量为4只。将y的值代入方程1中，我们可以求出鸡的数量：\n\nx + 4 = 10\nx = 6\n\n所以，这个问题的答案是：鸡有6只，兔有4只。\n----------------------------------------"
+      ]
+    },
+    {
+      "id": 1,
+      "type": "Phi3mini_4k_Chat_Zho",
+      "pos": [
+        200,
+        540
+      ],
+      "size": [
+        230,
+        660
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "PHI3",
+          "link": 1,
+          "slot_index": 0
+        },
+        {
+          "name": "tokenizer",
+          "type": "TK",
+          "link": 2
+        }
+      ],
+      "outputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "links": [
+            4
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Phi3mini_4k_Chat_Zho"
+      },
+      "widgets_values": [
+        "鸡兔同笼问题：鸡和兔一共10只，脚一共28只，求问鸡几只兔几只？\n用中文回答",
+        "You are a helpful AI assistant.",
+        0
+      ]
+    }
+  ],
+  "links": [
+    [
+      1,
+      2,
+      0,
+      1,
+      0,
+      "PHI3"
+    ],
+    [
+      2,
+      2,
+      1,
+      1,
+      1,
+      "TK"
+    ],
+    [
+      4,
+      1,
+      0,
+      4,
+      0,
+      "STRING"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {},
+  "version": 0.4
+}
