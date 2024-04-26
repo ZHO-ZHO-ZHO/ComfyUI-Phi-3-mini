@@ -44,7 +44,7 @@ class Phi3mini_4k_Zho:
                 "model": ("PHI3",),
                 "tokenizer": ("TK",),
                 "prompt": ("STRING", {"default": "What is the meaning of life?", "multiline": True}),
-                "system_instruction": ("STRING", {"default": "You are creating a prompt for Stable Diffusion to generate an image. First step: describe this image, then put description into text. Second step: generate a text prompt for %s based on first step.  Only respond with the prompt itself, but embellish it as needed but keep it under 80 tokens.", "multiline": True}),
+                "system_instruction": ("STRING", {"default": "You are creating a prompt for Stable Diffusion to generate an image. First step: understand the input and generate a text prompt for the input. Second step: only respond in English with the prompt itself in phrase, but embellish it as needed but keep it under 200 tokens.", "multiline": True}),
                 "temperature": ("FLOAT", {"default": 0.0, "min": 0.0, "max": 1.0, "step": 0.01}),
             }
         }
@@ -93,7 +93,7 @@ class Phi3mini_4k_Chat_Zho:
                 "model": ("PHI3",),
                 "tokenizer": ("TK",),
                 "prompt": ("STRING", {"default": "What is the meaning of life?", "multiline": True}),
-                "system_instruction": ("STRING", {"default": "You are creating a prompt for Stable Diffusion to generate an image. First step: describe this image, then put description into text. Second step: generate a text prompt for %s based on first step.  Only respond with the prompt itself, but embellish it as needed but keep it under 80 tokens.", "multiline": True}),
+                "system_instruction": ("STRING", {"default": "You are creating a prompt for Stable Diffusion to generate an image. First step: understand the input and generate a text prompt for the input. Second step: only respond in English with the prompt itself in phrase, but embellish it as needed but keep it under 200 tokens.", "multiline": True}),
                 "temperature": ("FLOAT", {"default": 0.0, "min": 0.0, "max": 1.0, "step": 0.01}),
             }
         }
