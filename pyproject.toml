@@ -1,0 +1,15 @@
+[project]
+name = "comfyui-phi-3-mini"
+description = "Nodes:Phi3mini_4k_ModelLoader_Zho, Phi3mini_4k_Zho, Phi3mini_4k_Chat_Zho"
+version = "1.0.0"
+license = "LICENSE"
+dependencies = ["transformers>=4.40.0"]
+
+[project.urls]
+Repository = "https://github.com/ZHO-ZHO-ZHO/ComfyUI-Phi-3-mini"
+#  Used by Comfy Registry https://comfyregistry.org
+
+[tool.comfy]
+PublisherId = ""
+DisplayName = "ComfyUI-Phi-3-mini"
+Icon = ""
