@@ -1,6 +1,6 @@
 {
-  "last_node_id": 11,
-  "last_link_id": 15,
+  "last_node_id": 18,
+  "last_link_id": 31,
   "nodes": [
     {
       "id": 7,
@@ -35,11 +35,18 @@
         }
       ],
       "properties": {
-        "Node name for S&R": "CLIPTextEncode"
+        "Node name for S&R": "CLIPTextEncode",
+        "ttNbgOverride": {
+          "color": "#222",
+          "bgcolor": "#000",
+          "groupcolor": "#444"
+        }
       },
       "widgets_values": [
         "low quality"
-      ]
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
     },
     {
       "id": 8,
@@ -50,7 +57,7 @@
       ],
       "size": {
         "0": 400,
-        "1": 54
+        "1": 50
       },
       "flags": {},
       "order": 7,
@@ -84,158 +91,18 @@
         }
       ],
       "properties": {
-        "Node name for S&R": "CLIPTextEncode"
+        "Node name for S&R": "CLIPTextEncode",
+        "ttNbgOverride": {
+          "color": "#222",
+          "bgcolor": "#000",
+          "groupcolor": "#444"
+        }
       },
       "widgets_values": [
         ""
-      ]
-    },
-    {
-      "id": 3,
-      "type": "DisplayText_Zho",
-      "pos": [
-        1170,
-        1120
       ],
-      "size": {
-        "0": 410,
-        "1": 110
-      },
-      "flags": {},
-      "order": 6,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "text",
-          "type": "STRING",
-          "link": 3,
-          "widget": {
-            "name": "text"
-          }
-        }
-      ],
-      "outputs": [
-        {
-          "name": "text",
-          "type": "STRING",
-          "links": [
-            11
-          ],
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "DisplayText_Zho"
-      },
-      "widgets_values": [
-        "",
-        "\"A stunning Lamborghini Huracán in the wild, breathtaking landscape, all four seasons' beauty, professional camera shot, advertisement, sunset ambiance.\""
-      ]
-    },
-    {
-      "id": 10,
-      "type": "VAEDecode",
-      "pos": [
-        1170,
-        1020
-      ],
-      "size": {
-        "0": 410,
-        "1": 50
-      },
-      "flags": {},
-      "order": 9,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "samples",
-          "type": "LATENT",
-          "link": 13
-        },
-        {
-          "name": "vae",
-          "type": "VAE",
-          "link": 14,
-          "slot_index": 1
-        }
-      ],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            15
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "VAEDecode"
-      }
-    },
-    {
-      "id": 4,
-      "type": "KSampler",
-      "pos": [
-        1170,
-        710
-      ],
-      "size": {
-        "0": 410,
-        "1": 262
-      },
-      "flags": {},
-      "order": 8,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "model",
-          "type": "MODEL",
-          "link": 6,
-          "slot_index": 0
-        },
-        {
-          "name": "positive",
-          "type": "CONDITIONING",
-          "link": 10
-        },
-        {
-          "name": "negative",
-          "type": "CONDITIONING",
-          "link": 7,
-          "slot_index": 2
-        },
-        {
-          "name": "latent_image",
-          "type": "LATENT",
-          "link": 12,
-          "slot_index": 3
-        }
-      ],
-      "outputs": [
-        {
-          "name": "LATENT",
-          "type": "LATENT",
-          "links": [
-            13
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "KSampler"
-      },
-      "widgets_values": [
-        745665541847989,
-        "randomize",
-        30,
-        3,
-        "dpmpp_2m",
-        "karras",
-        1
-      ]
+      "color": "#222",
+      "bgcolor": "#000"
     },
     {
       "id": 6,
@@ -271,13 +138,20 @@
         }
       ],
       "properties": {
-        "Node name for S&R": "ModelSamplingContinuousEDM"
+        "Node name for S&R": "ModelSamplingContinuousEDM",
+        "ttNbgOverride": {
+          "color": "#222",
+          "bgcolor": "#000",
+          "groupcolor": "#444"
+        }
       },
       "widgets_values": [
         "v_prediction",
         120,
         0.002
-      ]
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
     },
     {
       "id": 5,
@@ -321,63 +195,151 @@
         }
       ],
       "properties": {
-        "Node name for S&R": "CheckpointLoaderSimple"
+        "Node name for S&R": "CheckpointLoaderSimple",
+        "ttNbgOverride": {
+          "color": "#222",
+          "bgcolor": "#000",
+          "groupcolor": "#444"
+        }
       },
       "widgets_values": [
         "cosxl.safetensors"
-      ]
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
     },
     {
-      "id": 1,
-      "type": "Phi3mini_4k_ModelLoader_Zho",
+      "id": 4,
+      "type": "KSampler",
       "pos": [
-        360,
-        1180
+        1170,
+        710
       ],
-      "size": {
-        "0": 370,
-        "1": 50
-      },
+      "size": [
+        400,
+        270
+      ],
       "flags": {},
-      "order": 1,
+      "order": 8,
       "mode": 0,
-      "outputs": [
+      "inputs": [
         {
-          "name": "Phi3mini_4k",
-          "type": "PHI3",
-          "links": [
-            1
-          ],
-          "shape": 3,
+          "name": "model",
+          "type": "MODEL",
+          "link": 6,
           "slot_index": 0
         },
         {
-          "name": "tokenizer",
-          "type": "TK",
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 10
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 7,
+          "slot_index": 2
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 12,
+          "slot_index": 3
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
           "links": [
-            2
+            13
           ],
           "shape": 3,
-          "slot_index": 1
+          "slot_index": 0
         }
       ],
       "properties": {
-        "Node name for S&R": "Phi3mini_4k_ModelLoader_Zho"
-      }
+        "Node name for S&R": "KSampler",
+        "ttNbgOverride": {
+          "color": "#222",
+          "bgcolor": "#000",
+          "groupcolor": "#444"
+        }
+      },
+      "widgets_values": [
+        487609906540639,
+        "randomize",
+        30,
+        3,
+        "dpmpp_2m",
+        "karras",
+        1
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 10,
+      "type": "VAEDecode",
+      "pos": [
+        1170,
+        1030
+      ],
+      "size": [
+        400,
+        50
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 13
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 14,
+          "slot_index": 1
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            15
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode",
+        "ttNbgOverride": {
+          "color": "#222",
+          "bgcolor": "#000",
+          "groupcolor": "#444"
+        }
+      },
+      "color": "#222",
+      "bgcolor": "#000"
     },
     {
       "id": 9,
       "type": "EmptyLatentImage",
       "pos": [
         360,
-        1020
+        1010
       ],
-      "size": {
-        "0": 370,
-        "1": 110
-      },
+      "size": [
+        370,
+        120
+      ],
       "flags": {},
-      "order": 2,
+      "order": 1,
       "mode": 0,
       "outputs": [
         {
@@ -390,38 +352,88 @@
         }
       ],
       "properties": {
-        "Node name for S&R": "EmptyLatentImage"
+        "Node name for S&R": "EmptyLatentImage",
+        "ttNbgOverride": {
+          "color": "#222",
+          "bgcolor": "#000",
+          "groupcolor": "#444"
+        }
       },
       "widgets_values": [
         1024,
         1024,
         6
-      ]
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
     },
     {
-      "id": 2,
-      "type": "Phi3mini_4k_Zho",
+      "id": 1,
+      "type": "Phi3mini_4k_ModelLoader_Zho",
       "pos": [
-        750,
-        940
+        360,
+        1190
       ],
-      "size": {
-        "0": 400,
-        "1": 290
-      },
+      "size": [
+        370,
+        60
+      ],
       "flags": {},
-      "order": 5,
+      "order": 2,
       "mode": 0,
-      "inputs": [
+      "outputs": [
         {
-          "name": "model",
+          "name": "Phi3mini_4k",
           "type": "PHI3",
-          "link": 1
+          "links": [
+            29
+          ],
+          "shape": 3,
+          "slot_index": 0
         },
         {
           "name": "tokenizer",
           "type": "TK",
-          "link": 2
+          "links": [
+            30
+          ],
+          "shape": 3,
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Phi3mini_4k_ModelLoader_Zho",
+        "ttNbgOverride": {
+          "color": "#222",
+          "bgcolor": "#000",
+          "groupcolor": "#444"
+        }
+      },
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 3,
+      "type": "DisplayText_Zho",
+      "pos": [
+        1170,
+        1130
+      ],
+      "size": [
+        400,
+        120
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 31,
+          "widget": {
+            "name": "text"
+          }
         }
       ],
       "outputs": [
@@ -429,32 +441,91 @@
           "name": "text",
           "type": "STRING",
           "links": [
-            3
+            11
+          ],
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DisplayText_Zho",
+        "ttNbgOverride": {
+          "color": "#222",
+          "bgcolor": "#000",
+          "groupcolor": "#444"
+        }
+      },
+      "widgets_values": [
+        "",
+        "A breathtaking Lamborghini Huracán racing through an idyllic countryside, showcasing the beauty of all four seasons in a single frame. The scene is captured with a professional camera lens, designed for a high-end advertisement, with the golden hues of the setting sun casting a warm glow on the sleek vehicle."
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 17,
+      "type": "Phi3mini_4k_Zho",
+      "pos": [
+        750,
+        930
+      ],
+      "size": [
+        400,
+        320
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "PHI3",
+          "link": 29
+        },
+        {
+          "name": "tokenizer",
+          "type": "TK",
+          "link": 30
+        }
+      ],
+      "outputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "links": [
+            31
           ],
           "shape": 3,
           "slot_index": 0
         }
       ],
       "properties": {
-        "Node name for S&R": "Phi3mini_4k_Zho"
+        "Node name for S&R": "Phi3mini_4k_Zho",
+        "ttNbgOverride": {
+          "color": "#222",
+          "bgcolor": "#000",
+          "groupcolor": "#444"
+        }
       },
       "widgets_values": [
         "炫酷的兰博基尼飞驰在旷野上，风景优美，四季风光，专业镜头，广告片，夕阳",
-        "You are creating a prompt for Stable Diffusion to generate an image. \nFirst step: understand the input and generate a text prompt for the input. \nSecond step: only respond in English with the prompt itself in phrase, but embellish it as needed but keep it under 200 tokens.",
+        "You are creating a prompt for Stable Diffusion to generate a visually pleasing image.\nFirst step: understand the input and generate a text prompt for the input.\nSecond step: respond in English with the prompt itself in clear and detailed phrases to vividly depict the scene and its composition, without using quotation marks. Ensure the prompt is under 200 tokens.",
+        "Disabled",
         0.5
-      ]
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
     },
     {
       "id": 11,
       "type": "PreviewImage",
       "pos": [
-        362,
-        1280
+        360,
+        1290
       ],
-      "size": {
-        "0": 1220,
-        "1": 840
-      },
+      "size": [
+        1210,
+        800
+      ],
       "flags": {},
       "order": 10,
       "mode": 0,
@@ -467,35 +538,18 @@
       ],
       "title": "🏖️Phi3mini 4k + CosXL",
       "properties": {
-        "Node name for S&R": "PreviewImage"
-      }
+        "Node name for S&R": "PreviewImage",
+        "ttNbgOverride": {
+          "color": "#222",
+          "bgcolor": "#000",
+          "groupcolor": "#444"
+        }
+      },
+      "color": "#222",
+      "bgcolor": "#000"
     }
   ],
   "links": [
-    [
-      1,
-      1,
-      0,
-      2,
-      0,
-      "PHI3"
-    ],
-    [
-      2,
-      1,
-      1,
-      2,
-      1,
-      "TK"
-    ],
-    [
-      3,
-      2,
-      0,
-      3,
-      0,
-      "STRING"
-    ],
     [
       5,
       5,
@@ -583,10 +637,45 @@
       11,
       0,
       "IMAGE"
+    ],
+    [
+      29,
+      1,
+      0,
+      17,
+      0,
+      "PHI3"
+    ],
+    [
+      30,
+      1,
+      1,
+      17,
+      1,
+      "TK"
+    ],
+    [
+      31,
+      17,
+      0,
+      3,
+      0,
+      "STRING"
     ]
   ],
   "groups": [],
   "config": {},
-  "extra": {},
+  "extra": {
+    "workspace_info": {
+      "id": "EqRJMnurIOW_gLn6RJMBA"
+    },
+    "ds": {
+      "scale": 0.8769226950000015,
+      "offset": [
+        65.72694873061806,
+        -618.2696080474552
+      ]
+    }
+  },
   "version": 0.4
 }

@@ -1,44 +1,7 @@
 {
-  "last_node_id": 4,
-  "last_link_id": 4,
+  "last_node_id": 7,
+  "last_link_id": 10,
   "nodes": [
-    {
-      "id": 2,
-      "type": "Phi3mini_4k_ModelLoader_Zho",
-      "pos": [
-        200,
-        430
-      ],
-      "size": [
-        230,
-        60
-      ],
-      "flags": {},
-      "order": 0,
-      "mode": 0,
-      "outputs": [
-        {
-          "name": "Phi3mini_4k",
-          "type": "PHI3",
-          "links": [
-            1
-          ],
-          "shape": 3
-        },
-        {
-          "name": "tokenizer",
-          "type": "TK",
-          "links": [
-            2
-          ],
-          "shape": 3,
-          "slot_index": 1
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "Phi3mini_4k_ModelLoader_Zho"
-      }
-    },
     {
       "id": 4,
       "type": "DisplayText_Zho",
@@ -46,10 +9,10 @@
         450,
         430
       ],
-      "size": [
-        590,
-        770
-      ],
+      "size": {
+        "0": 590,
+        "1": 770
+      },
       "flags": {},
       "order": 2,
       "mode": 0,
@@ -57,7 +20,7 @@
         {
           "name": "text",
           "type": "STRING",
-          "link": 4,
+          "link": 10,
           "widget": {
             "name": "text"
           }
@@ -73,24 +36,76 @@
       ],
       "title": "🏖️Phi3mini 4k Chat",
       "properties": {
-        "Node name for S&R": "DisplayText_Zho"
+        "Node name for S&R": "DisplayText_Zho",
+        "ttNbgOverride": {
+          "color": "#222",
+          "bgcolor": "#000",
+          "groupcolor": "#444"
+        }
       },
       "widgets_values": [
         "",
-        "user: What is the meaning of life?\n----------------------------------------\nsystem: The meaning of life is a profound and complex question that has been explored by philosophers, theologians, scientists, and thinkers throughout history. There is no single, universally accepted answer, as perspectives on this question can vary greatly depending on cultural, religious, and personal beliefs.\n\nSome people find meaning in life through their relationships with others, their pursuit of knowledge, or their contribution to society. Others may find meaning in spirituality, religion, or a connection to something greater than themselves.\n\nFrom a scientific perspective, life can be seen as a product of evolution, with the primary goal of survival and reproduction. However, this does not necessarily provide a deeper meaning or purpose.\n\nUltimately, the meaning of life is a personal journey, and each individual must find their own purpose and meaning through introspection, experiences, and the pursuit of their passions and values.\n----------------------------------------\nuser: 你是谁？\n----------------------------------------\nsystem: 我是一个人工智能助手，专门设计来帮助用户解答问题、提供信息和执行任务。如果你有任何问题或需要帮助，请随时告诉我。\n\n----------------------------------------\nuser: 鸡兔同笼问题：鸡和兔一共10只，脚一共28只，求问鸡几只兔几只？\n用中文回答\n----------------------------------------\nsystem: 这是一个经典的数学问题，叫做鸡兔同笼问题。根据题目，有10只动物，其中一部分是鸡，另一部分是兔子。鸡和兔的脚总数为28只。\n\n设鸡的数量为x，兔的数量为y。\n\n根据题目信息，我们可以得出以下两个方程：\n\n1) x + y = 10 (鸡和兔的总数)\n2) 2x + 4y = 28 (鸡和兔的脚总数，因为鸡有2只脚，兔有4只脚)\n\n我们可以通过方程2替换方程1中的x或y来解这个方程组。\n\n首先，我们将方程1中的x表示为10 - y，然后将其代入方程2中：\n\n2(10 - y) + 4y = 28\n20 - 2y + 4y = 28\n2y = 8\ny = 4\n\n现在我们知道兔子的数量为4只。将y的值代入方程1中，我们可以求出鸡的数量：\n\nx + 4 = 10\nx = 6\n\n所以，这个问题的答案是：鸡有6只，兔有4只。\n----------------------------------------"
-      ]
+        "user: You are a helpful AI assistant.\nWhat is the meaning of life\n----------------------------------------\nsystem:  As an AI, I can provide various perspectives on the meaning of life, as it's a profound and complex question that has been explored by philosophers, theologians, scientists, and thinkers throughout history. Here are a few perspectives:\n\n1. Philosophical perspective: Many philosophers have proposed different ideas about the meaning of life. Existentialists, for example, believe that life has no inherent meaning, and it's up to each individual to create their own purpose.\n\n2. Religious perspective: Different religions offer their own interpretations of the meaning of life. For example, in Christianity, the purpose of life is to love and serve God and to seek eternal life. In Buddhism, the goal is to achieve enlightenment and liberation from suffering.\n\n3. Scientific perspective: From a scientific standpoint, life can be seen as a product of evolution, with the primary goal being to survive and reproduce. However, this perspective doesn't necessarily address the subjective experience of meaning and purpose.\n\n4. Personal perspective: Many people find meaning in life through their relationships, passions, and personal growth. This can involve pursuing goals, helping others, and finding fulfillment in one's experiences.\n\nUltimately, the meaning of life is a deeply personal question, and each individual may find their own answer based on their beliefs, experiences, and values.\n----------------------------------------\nuser: 你是谁？\n----------------------------------------\nsystem:  I'm an AI digital assistant designed to provide information, answer questions, and assist with tasks. How can I help you today?\n----------------------------------------\nuser: 鸡兔同笼问题：鸡兔一共10只，脚一共28只，求问鸡几只兔几只？\n用中文回答\n----------------------------------------\nsystem:  我们可以通过设置一个方程来解这个问题。设鸡的数量为x，兔的数量为y，我们有以下两个方程：\n\n1. x + y = 10 (因为总共有10只动物)\n2. 2x + 4y = 28 (因为鸡有2只脚，兔有4只脚，总共有28只脚)\n\n我们可以将方程1乘以2得到2x + 2y = 20。然后将方程1乘以2后减去得到2x + 4y - (2x + 2y) = 28 - 20，得到2y = 8。解这个方程，我们得到y = 4。\n\n将y的值代入方程1，我们得到x + 4 = 10，解得x = 6。\n\n所以，鸡有6只，兔有4只。\n----------------------------------------"
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
     },
     {
-      "id": 1,
+      "id": 2,
+      "type": "Phi3mini_4k_ModelLoader_Zho",
+      "pos": [
+        140,
+        430
+      ],
+      "size": {
+        "0": 290,
+        "1": 60
+      },
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "Phi3mini_4k",
+          "type": "PHI3",
+          "links": [
+            8
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "tokenizer",
+          "type": "TK",
+          "links": [
+            9
+          ],
+          "shape": 3,
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Phi3mini_4k_ModelLoader_Zho",
+        "ttNbgOverride": {
+          "color": "#222",
+          "bgcolor": "#000",
+          "groupcolor": "#444"
+        }
+      },
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 7,
       "type": "Phi3mini_4k_Chat_Zho",
       "pos": [
-        200,
+        140,
         540
       ],
-      "size": [
-        230,
-        660
-      ],
+      "size": {
+        "0": 290,
+        "1": 660
+      },
       "flags": {},
       "order": 1,
       "mode": 0,
@@ -98,13 +113,12 @@
         {
           "name": "model",
           "type": "PHI3",
-          "link": 1,
-          "slot_index": 0
+          "link": 8
         },
         {
           "name": "tokenizer",
           "type": "TK",
-          "link": 2
+          "link": 9
         }
       ],
       "outputs": [
@@ -112,42 +126,50 @@
           "name": "text",
           "type": "STRING",
           "links": [
-            4
+            10
           ],
           "shape": 3,
           "slot_index": 0
         }
       ],
       "properties": {
-        "Node name for S&R": "Phi3mini_4k_Chat_Zho"
+        "Node name for S&R": "Phi3mini_4k_Chat_Zho",
+        "ttNbgOverride": {
+          "color": "#222",
+          "bgcolor": "#000",
+          "groupcolor": "#444"
+        }
       },
       "widgets_values": [
-        "鸡兔同笼问题：鸡和兔一共10只，脚一共28只，求问鸡几只兔几只？\n用中文回答",
+        "鸡兔同笼问题：鸡兔一共10只，脚一共28只，求问鸡几只兔几只？\n用中文回答",
         "You are a helpful AI assistant.",
+        "Disabled",
         0
-      ]
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
     }
   ],
   "links": [
     [
-      1,
+      8,
       2,
       0,
-      1,
+      7,
       0,
       "PHI3"
     ],
     [
-      2,
+      9,
       2,
       1,
-      1,
+      7,
       1,
       "TK"
     ],
     [
-      4,
-      1,
+      10,
+      7,
       0,
       4,
       0,
@@ -156,6 +178,17 @@
   ],
   "groups": [],
   "config": {},
-  "extra": {},
+  "extra": {
+    "ds": {
+      "scale": 1.0610764609500012,
+      "offset": [
+        241.97073712180006,
+        -277.56338493837404
+      ]
+    },
+    "workspace_info": {
+      "id": "ArkUi3XfPpGu9lRWQZnsF"
+    }
+  },
   "version": 0.4
 }
