@@ -3,7 +3,13 @@ import os
 import io
 from io import BytesIO
 from transformers import AutoModelForCausalLM, AutoTokenizer, pipeline
+from textwrap import dedent
 
+prepended_user_instruction_text = dedent("""
+    You are creating a prompt for Stable Diffusion to generate a visually pleasing image.
+    First step: understand the input and generate a text prompt for the input.
+    Second step: respond in English with the prompt itself in clear and detailed phrases to vividly depict the scene and its composition, without using quotation marks. Ensure the prompt is under 200 tokens.
+    """).strip()
 
 class Phi3mini_4k_ModelLoader_Zho:
     def __init__(self):
@@ -44,7 +50,8 @@ class Phi3mini_4k_Zho:
                 "model": ("PHI3",),
                 "tokenizer": ("TK",),
                 "prompt": ("STRING", {"default": "What is the meaning of life?", "multiline": True}),
-                "system_instruction": ("STRING", {"default": "You are creating a prompt for Stable Diffusion to generate an image. First step: understand the input and generate a text prompt for the input. Second step: only respond in English with the prompt itself in phrase, but embellish it as needed but keep it under 200 tokens.", "multiline": True}),
+                "prepended_user_instruction": ("STRING", {"default": prepended_user_instruction_text, "multiline": True}),
+                "system_instruction": (["Disabled", "Enabled"],),
                 "temperature": ("FLOAT", {"default": 0.0, "min": 0.0, "max": 1.0, "step": 0.01}),
             }
         }
@@ -56,10 +63,15 @@ class Phi3mini_4k_Zho:
     CATEGORY = "🏖️Phi3mini"
 
 
-    def generate_content(self, model, tokenizer, prompt, system_instruction, temperature):
-
+    def generate_content(self, model, tokenizer, prompt, prepended_user_instruction, system_instruction, temperature):
+        if system_instruction == "Enabled":
+            system_instruction_txt = prepended_user_instruction
+        else:
+            prompt = prepended_user_instruction + prompt
+            system_instruction_txt = ""
+        
         messages = [
-            {"role": "system", "content": system_instruction},
+            {"role": "system", "content": system_instruction_txt},
             {"role": "user", "content": prompt},
         ]
 
@@ -93,7 +105,8 @@ class Phi3mini_4k_Chat_Zho:
                 "model": ("PHI3",),
                 "tokenizer": ("TK",),
                 "prompt": ("STRING", {"default": "What is the meaning of life?", "multiline": True}),
-                "system_instruction": ("STRING", {"default": "You are creating a prompt for Stable Diffusion to generate an image. First step: understand the input and generate a text prompt for the input. Second step: only respond in English with the prompt itself in phrase, but embellish it as needed but keep it under 200 tokens.", "multiline": True}),
+                "prepended_user_instruction": ("STRING", {"default": prepended_user_instruction_text, "multiline": True}),
+                "system_instruction": (["Disabled", "Enabled"],),
                 "temperature": ("FLOAT", {"default": 0.0, "min": 0.0, "max": 1.0, "step": 0.01}),
             }
         }
@@ -126,14 +139,21 @@ class Phi3mini_4k_Chat_Zho:
 
         return text_output
 
-    def generate_content(self, model, tokenizer, prompt, system_instruction, temperature):
+    def generate_content(self, model, tokenizer, prompt, prepended_user_instruction, system_instruction, temperature):
         # Store model, tokenizer, and temperature as instance variables
         self.model = model
         self.tokenizer = tokenizer
         self.temperature = temperature
 
-        # Generate response and update chat history
-        response = self.phi_3(prompt, system_instruction)
+        if system_instruction == "Enabled":
+            system_instruction_txt = prepended_user_instruction
+            response = self.phi_3(prompt, system_instruction_txt)
+        else:
+            prompt = prepended_user_instruction + prompt
+            system_instruction_txt = ""
+            response = self.phi_3(prompt, system_instruction_txt)
+
+        # Update chat history
         self.chat_history.append({"role": "user", "content": prompt})
         self.chat_history.append({"role": "system", "content": response})
         
