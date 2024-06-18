@@ -97,6 +97,8 @@ class Phi3mini_4k_Zho:
 class Phi3mini_4k_Chat_Zho:
     def __init__(self):
         self.chat_history = []
+        self.prepended = False  # Flag to track if prepended_user_instruction has been added
+
 
     @classmethod
     def INPUT_TYPES(cls):
@@ -149,7 +151,9 @@ class Phi3mini_4k_Chat_Zho:
             system_instruction_txt = prepended_user_instruction
             response = self.phi_3(prompt, system_instruction_txt)
         else:
-            prompt = prepended_user_instruction + prompt
+            if not self.prepended:  # Check if prepended_user_instruction has been added
+                prompt = prepended_user_instruction + "\n" + prompt
+                self.prepended = True  # Set flag to True after prepending
             system_instruction_txt = ""
             response = self.phi_3(prompt, system_instruction_txt)
 
