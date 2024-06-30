@@ -5,6 +5,9 @@ from io import BytesIO
 from transformers import AutoModelForCausalLM, AutoTokenizer, pipeline
 
 
+import folder_paths
+
+
 class Phi3mini_4k_ModelLoader_Zho:
     def __init__(self):
         pass
@@ -23,13 +26,16 @@ class Phi3mini_4k_ModelLoader_Zho:
     CATEGORY = "🏖️Phi3mini"
   
     def load_model(self,):
+        model_path = "microsoft/Phi-3-mini-4k-instruct"
+        if "Phi3_model" in folder_paths.folder_names_and_paths:
+            model_path = folder_paths.folder_names_and_paths['Phi3_model'][0][0]
         model = AutoModelForCausalLM.from_pretrained(
-            "microsoft/Phi-3-mini-4k-instruct", 
+            model_path, 
             device_map="cuda", 
             torch_dtype="auto", 
             trust_remote_code=True, 
         )
-        tokenizer = AutoTokenizer.from_pretrained("microsoft/Phi-3-mini-4k-instruct")
+        tokenizer = AutoTokenizer.from_pretrained(model_path)
         return model, tokenizer
 
 
